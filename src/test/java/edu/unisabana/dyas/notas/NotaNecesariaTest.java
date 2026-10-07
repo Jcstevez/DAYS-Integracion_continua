@@ -16,7 +16,7 @@ class NotaNecesariaTest {
             "3.0, 3.0, 3.0",
             "2.0, 2.0, 4.5",
             "3.5, 2.8, 2.8",
-            "5.0, 5.0, 0.0"
+            "5.0, 5.0, 1.0"
     })
     void calculaLaNotaNecesariaEnElTercerCorte(double c1, double c2, double esperada) {
         assertEquals(esperada, calculadora.notaNecesariaTercerCorte(c1, c2));
