@@ -1,0 +1,7 @@
+Taller de Integración Continua - Diseño y Arquitectura de Software
+Universidad de La Sabana - Ingeniería Informática
+
+Integrante (trabajo individual):
+- Juan Camilo Estevez Otalora
+  Correo institucional: juanesot@unisabana.edu.co
+  GitHub: Jcstevez
