@@ -56,3 +56,27 @@ jobs:
             target/surefire-reports/
             target/site/jacoco/
           if-no-files-found: ignore
+
+  # Reto opcional 1: matriz de versiones. Va en un job aparte para NO cambiar el nombre del job
+  # principal ("Build, pruebas y cobertura"), que es el check que exige el ruleset de main.
+  matriz-java:
+    name: Pruebas con Java ${{ matrix.java }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: ['17', '21']
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v7
+
+      - name: Instalar Java ${{ matrix.java }} (con caché de dependencias Maven)
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+
+      - name: Compilar, probar y verificar cobertura
+        run: mvn -B verify
